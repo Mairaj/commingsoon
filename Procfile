@@ -1,1 +1,1 @@
-web: python commingsoon.wsgi
+web: gunicorn commingsoon.wsgi

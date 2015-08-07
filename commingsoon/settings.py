@@ -20,7 +20,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static-root')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static-root'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 # Quick-start development settings - unsuitable for production

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
 
 from commingsoonapp.views import HomeView
 
@@ -22,3 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', HomeView.as_view()),
 ]
+if not settings.DEBUG:
+    urlpatterns += patterns[
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    ]

@@ -32,7 +32,7 @@ SECRET_KEY = 'g1*(g)g%!wa2oi-#iia4*4w+e6auu4c*@d%zgrjy@8lz_9f-zz'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+TEMPLATE_DEBUG = DEBUG
 
 # Application definition
 
@@ -92,7 +92,11 @@ DATABASES = {
     }
 }
 
-
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
